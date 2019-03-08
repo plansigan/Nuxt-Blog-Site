@@ -1,4 +1,4 @@
-# nuxt-udemy-project
+# nuxt-project
 
 > My breathtaking Nuxt.js project
 
