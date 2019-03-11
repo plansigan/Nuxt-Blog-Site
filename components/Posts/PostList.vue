@@ -1,32 +1,32 @@
 <template>
     <section class="post-list">
         <PostPreview
-            id="1"
-            thumbnail="https://www.articlesplanet.info/wp-content/uploads/2018/05/Tech-sector.jpg"
-            title="Hello There!"
-            PreviewText="This is my first post!"
-        />
-        <PostPreview
-            id="2"
-            thumbnail="https://www.articlesplanet.info/wp-content/uploads/2018/05/Tech-sector.jpg"
-            title="wazzup!"
-            PreviewText="This is my second post!"
-        />
-        <PostPreview
-            id="3"
-            thumbnail="https://www.articlesplanet.info/wp-content/uploads/2018/05/Tech-sector.jpg"
-            title="Great News!!"
-            PreviewText="This is my third post!"
-        />
+            v-for="post in posts"
+            :key="post.id"
+            :is-admin="isAdmin"
+            :id="post.id"
+            :thumbnail="post.thumbnail"
+            :title="post.title"
+            :PreviewText="post.previewText"/>
     </section>
 </template>
-
+<!-- https://www.articlesplanet.info/wp-content/uploads/2018/05/Tech-sector.jpg-->
 <script>
 import PostPreview from '@/components/posts/PostPreview'
     export default {
         components:{
             PostPreview
-        }   
+        },
+        props:{
+            isAdmin:{
+                type:Boolean,
+                default:false
+            },
+            posts:{
+                type:Array,
+                required:true
+            }
+        }
     }
 </script>
 

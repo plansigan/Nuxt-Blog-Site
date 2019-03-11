@@ -14,6 +14,24 @@
     </div>
 </template>
 
+<script>
+export default {
+  asyncData(context,callback){
+    setTimeout(()=>{
+      callback(null,{
+        loadedPost:{
+          id:1
+          ,title:'FirstPost',
+          previewText:'This is our first post!',
+          thumbnail:'https://www.articlesplanet.info/wp-content/uploads/2018/05/Tech-sector.jpg'
+        }
+      })
+    },1000)
+  }
+}
+</script>
+
+
 
 <style scoped>
     .single-post-page {

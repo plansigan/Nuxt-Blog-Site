@@ -3,7 +3,7 @@
     <section class="intro">
       <h1>Get the latest tech news!</h1>
     </section>
-      <PostList/>
+      <PostList :posts="loadedPosts"/>
   </div>
 </template>
 
@@ -12,7 +12,30 @@
   export default {
     components:{
       PostList
-    }    
+    },
+    asyncData(context,callback){
+      setTimeout(()=>{
+        callback(null,{
+          loadedPosts:[
+            {id:1,title:'FirstPost',previewText:'This is our first post!',thumbnail:'https://www.articlesplanet.info/wp-content/uploads/2018/05/Tech-sector.jpg'},
+            {id:2,title:'SecondPost',previewText:'This is our second post!',thumbnail:'https://www.articlesplanet.info/wp-content/uploads/2018/05/Tech-sector.jpg'},
+            {id:3,title:'ThirdPost',previewText:'This is our third post!',thumbnail:'https://www.articlesplanet.info/wp-content/uploads/2018/05/Tech-sector.jpg'},
+          ]
+        })
+      },1500)
+    },
+    // data(){
+    //   return {
+    //       loadedPosts:[
+    //         // {id:1,title:'FirstPost',previewText:'This is our first post!',thumbnail:'https://www.articlesplanet.info/wp-content/uploads/2018/05/Tech-sector.jpg'},
+    //         // {id:2,title:'SecondPost',previewText:'This is our second post!',thumbnail:'https://www.articlesplanet.info/wp-content/uploads/2018/05/Tech-sector.jpg'},
+    //         // {id:3,title:'ThirdPost',previewText:'This is our third post!',thumbnail:'https://www.articlesplanet.info/wp-content/uploads/2018/05/Tech-sector.jpg'},
+    //       ]
+    //   }
+    // },
+    created(){
+      
+    }
   }
 </script>
 
