@@ -11,6 +11,7 @@
     import AdminPostForm from '@/components/Admin/AdminPostForm'
     
     export default {
+        middlware:['check-auth','auth'],
         components:{
             AdminPostForm
         },

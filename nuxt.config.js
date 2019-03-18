@@ -63,9 +63,10 @@ module.exports = {
     }
     
   },
-  // env:{
-  //   baseUrl: 
-  // },
+  env:{
+    // baseUrl:
+    fbAPIKey:'AIzaSyCV4OescSEJzoOzOLjDQGjO1V3kOmucE7k' 
+  },
   transition:{
     name:'fade',
     mode:'out-in'

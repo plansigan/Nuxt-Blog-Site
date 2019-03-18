@@ -14,6 +14,7 @@ import AdminPostForm from '@/components/Admin/AdminPostForm'
         components:{
             AdminPostForm
         },
+        middleware:['auth'],
         methods:{
           onSubmitted(postData){
             this.$store.dispatch('addPost',postData)
