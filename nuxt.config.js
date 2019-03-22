@@ -1,5 +1,8 @@
 const pkg = require('./package')
 
+//expressJS
+const bodyParser = require('body-parser');
+
 
 module.exports = {
   mode: 'universal',
@@ -50,7 +53,8 @@ module.exports = {
   axios:{
     baseURL:process.env.BASE_URL || 'https://nuxt-blog-2affd.firebaseio.com',
     credentials:false
-  },  
+  },
+  
   /*
   ** Build configuration
   */
@@ -70,5 +74,11 @@ module.exports = {
   transition:{
     name:'fade',
     mode:'out-in'
-  }
+  },
+
+  //nodejs SERVER
+  serverMiddleware:[
+    bodyParser.json(),
+    '~/api'
+  ]
 }
